@@ -5,6 +5,7 @@ class CreateTables < ActiveRecord::Migration
       t.string :facebook_token
 
       t.database_authenticatable :null => false
+      t.bannable
       t.confirmable
       t.recoverable
       t.rememberable

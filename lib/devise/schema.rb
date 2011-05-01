@@ -94,6 +94,10 @@ module Devise
       apply_devise_schema :locked_at, DateTime
     end
 
+    def bannable
+      apply_devise_schema :banned, "boolean", :default => false
+    end
+
     # Overwrite with specific modification to create your own schema.
     def apply_devise_schema(name, type, options={})
       raise NotImplementedError

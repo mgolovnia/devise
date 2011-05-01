@@ -16,6 +16,8 @@ class ActionDispatch::IntegrationTest
       )
       user.confirm! unless options[:confirm] == false
       user.lock_access! if options[:locked] == true
+      user.ban! if options[:banned] == true
+      user.unban! if options[:banned] == false
       user
     end
   end
