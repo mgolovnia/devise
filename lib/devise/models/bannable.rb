@@ -5,16 +5,16 @@ module Devise
       extend ActiveSupport::Concern
 
       def banned?
-        self.banned
+        !!self.banned_at
       end
 
       def ban!
-        self.banned = true
+        self.banned_at = Time.now
         self.save
       end
 
       def unban!
-        self.banned = false
+        self.banned_at = nil
         self.save
       end
       

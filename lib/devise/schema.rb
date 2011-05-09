@@ -95,7 +95,7 @@ module Devise
     end
 
     def bannable
-      apply_devise_schema :banned, "boolean", :default => false
+      apply_devise_schema :banned_at, DateTime, :default => false
     end
 
     # Overwrite with specific modification to create your own schema.
